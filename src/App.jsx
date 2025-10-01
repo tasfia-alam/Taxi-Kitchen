@@ -7,10 +7,13 @@ import OrderContainer from './components/OrderContainer';
 import { ToastContainer } from 'react-toastify';
 
 
-const loadOrders = () => fetch('/orders.json').then(res => res.json());
-
+const loadOrders =async()=>{
+  const res = await fetch('/orders.json')
+  return res.json()
+}
+const ordersPromise = loadOrders();
 const App =() => {
-  const ordersPromise = loadOrders();
+  
   //console.log(ordersPromise);
   return (
     <>
@@ -18,7 +21,7 @@ const App =() => {
     <Navbar></Navbar>
     <Heading>Kitchen Room</Heading>
     <Suspense fallback={"Loading...................."}>
-          <OrderContainer promise={ordersPromise}></OrderContainer>
+          <OrderContainer ordersPromise={ordersPromise}></OrderContainer>
     </Suspense>
     <ToastContainer>
        

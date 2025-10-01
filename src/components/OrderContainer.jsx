@@ -4,9 +4,9 @@ import { UtensilsCrossed } from 'lucide-react';
 import OrderCard from './cards/OrderCard';
 import { toast } from 'react-toastify';
 
-const OrderContainer = ({ promise }) => {
+const OrderContainer = ({ ordersPromise }) => {
     //console.log(promise)
-    const orders = use(promise);
+    const orders = use(ordersPromise);
     //console.log(orders)
 
     const[cookingItems, setCookingItems] = useState([]);

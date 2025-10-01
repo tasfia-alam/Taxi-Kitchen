@@ -6,6 +6,6 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   // base: '/Taxi-Kitchen/',
-  base: '/Taxi-Kitchen/',
+  // base: '/Taxi-Kitchen/',
   plugins: [react(), tailwindcss()],
 })
